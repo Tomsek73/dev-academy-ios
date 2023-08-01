@@ -12,6 +12,12 @@
 		C056104B2A5C78CA007FB970 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056104A2A5C78CA007FB970 /* ContentView.swift */; };
 		C056104D2A5C78CB007FB970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C056104C2A5C78CB007FB970 /* Assets.xcassets */; };
 		C05610502A5C78CB007FB970 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C056104F2A5C78CB007FB970 /* Preview Assets.xcassets */; };
+		E0A5F3042A700355001193AF /* PlacesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5F3032A700355001193AF /* PlacesScene.swift */; };
+		E0A5F3062A7004DD001193AF /* PlacesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5F3052A7004DD001193AF /* PlacesRow.swift */; };
+		E0A5F3092A793C3F001193AF /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = E0A5F3082A793C3F001193AF /* ActivityIndicatorView */; };
+		E0A5F30B2A793D2E001193AF /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5F30A2A793D2E001193AF /* PlaceDetail.swift */; };
+		E0A5F30D2A793E96001193AF /* MapViewUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5F30C2A793E96001193AF /* MapViewUIKit.swift */; };
+		E0A5F30F2A793EC3001193AF /* MapPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5F30E2A793EC3001193AF /* MapPlaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,11 @@
 		C056104A2A5C78CA007FB970 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C056104C2A5C78CB007FB970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C056104F2A5C78CB007FB970 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E0A5F3032A700355001193AF /* PlacesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesScene.swift; sourceTree = "<group>"; };
+		E0A5F3052A7004DD001193AF /* PlacesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRow.swift; sourceTree = "<group>"; };
+		E0A5F30A2A793D2E001193AF /* PlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
+		E0A5F30C2A793E96001193AF /* MapViewUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewUIKit.swift; sourceTree = "<group>"; };
+		E0A5F30E2A793EC3001193AF /* MapPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A5F3092A793C3F001193AF /* ActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +65,7 @@
 		C05610472A5C78CA007FB970 /* DevAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				E0A5F2FF2A7002DB001193AF /* Scenes */,
 				C05610482A5C78CA007FB970 /* DevAcademyApp.swift */,
 				C056104A2A5C78CA007FB970 /* ContentView.swift */,
 				C056104C2A5C78CB007FB970 /* Assets.xcassets */,
@@ -68,6 +81,34 @@
 				C056104F2A5C78CB007FB970 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E0A5F2FF2A7002DB001193AF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E0A5F3022A700333001193AF /* Places */,
+				E0A5F3012A700322001193AF /* Places Live */,
+				E0A5F30C2A793E96001193AF /* MapViewUIKit.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E0A5F3012A700322001193AF /* Places Live */ = {
+			isa = PBXGroup;
+			children = (
+				E0A5F3032A700355001193AF /* PlacesScene.swift */,
+				E0A5F3052A7004DD001193AF /* PlacesRow.swift */,
+				E0A5F30A2A793D2E001193AF /* PlaceDetail.swift */,
+				E0A5F30E2A793EC3001193AF /* MapPlaceView.swift */,
+			);
+			path = "Places Live";
+			sourceTree = "<group>";
+		};
+		E0A5F3022A700333001193AF /* Places */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Places;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +127,9 @@
 			dependencies = (
 			);
 			name = DevAcademy;
+			packageProductDependencies = (
+				E0A5F3082A793C3F001193AF /* ActivityIndicatorView */,
+			);
 			productName = DevAcademy;
 			productReference = C05610452A5C78CA007FB970 /* DevAcademy.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +158,9 @@
 				Base,
 			);
 			mainGroup = C056103C2A5C78CA007FB970;
+			packageReferences = (
+				E0A5F3072A793C3F001193AF /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+			);
 			productRefGroup = C05610462A5C78CA007FB970 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,9 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A5F30B2A793D2E001193AF /* PlaceDetail.swift in Sources */,
+				E0A5F3062A7004DD001193AF /* PlacesRow.swift in Sources */,
 				BEEF9EC12A67C74E002126F4 /* DataService.swift in Sources */,
+				E0A5F30F2A793EC3001193AF /* MapPlaceView.swift in Sources */,
 				C056104B2A5C78CA007FB970 /* ContentView.swift in Sources */,
+				E0A5F3042A700355001193AF /* PlacesScene.swift in Sources */,
 				C05610492A5C78CA007FB970 /* DevAcademyApp.swift in Sources */,
+				E0A5F30D2A793E96001193AF /* MapViewUIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0A5F3072A793C3F001193AF /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0A5F3082A793C3F001193AF /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A5F3072A793C3F001193AF /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C056103D2A5C78CA007FB970 /* Project object */;
 }
