@@ -8,10 +8,12 @@
 import SwiftUI
 import MapKit
 
+
 struct MapViewUIKit: UIViewRepresentable {
 
     let region: MKCoordinateRegion
     let mapType : MKMapType
+    
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()

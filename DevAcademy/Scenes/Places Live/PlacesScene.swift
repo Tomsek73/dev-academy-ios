@@ -2,15 +2,15 @@ import SwiftUI
 import ActivityIndicatorView
 
 struct PlacesScene: View {
-    @State var features: [Feature] = []
-    @State var showFavourites = false
+    let state = PlacesSceneState()
+    @EnvironmentObject private var coordinator: Coordinator
     var body: some View {
         NavigationStack {
             Group{
-                if !features.isEmpty {
-                    List(features, id: \.properties.nazev) { feature in
+                if state.placesAreLoaded {
+                    List(state.places, id: \.properties.nazev) { feature in
                         NavigationLink{
-                            PlaceDetail(feature: feature)
+                            coordinator.placeDetailScene(with: feature)
                         } label: {
                             
                             PlacesRow(feature: feature)
@@ -29,15 +29,15 @@ struct PlacesScene: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 Button("Oblíbené"){
-                    showFavourites.toggle()
+                    state.showFavourites.toggle()
                 }
             }
             
             
         }
-        .onAppear(perform: fetch)
-        .sheet(isPresented: $showFavourites){
-            Text("Zatím nic")
+        .onAppear(perform: state.fetch)
+        .sheet(isPresented: state.$showFavourites){
+            coordinator.favoritesScene
                 .presentationDetents([.medium, .large])
                 .presentationDragIndicator(.visible)
         }
@@ -51,20 +51,7 @@ struct PlacesScene: View {
     func tapped(on feature: Feature) {
     }
 
-    func fetch() {
-        DataService.shared.fetchData { result in
-            switch result {
-            case .success(let features):
-                self.features = features.features
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+    
 }
 
-struct PlacesScene_Previews: PreviewProvider {
-    static var previews: some View {
-        PlacesScene()
-    }
-}
+
